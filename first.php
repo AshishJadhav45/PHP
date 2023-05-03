@@ -1,26 +1,31 @@
 <?php
 
 // database credentials
-$host = "localhost";
+$host = "localhost:3306";
 $user = "root";
 $pass = "";
-$dbname = "mysql";
+$databasename = "ashish";
 
-// create a database connection
-$conn = mysqli_connect($host, $user, $pass, $dbname);
+# create a database connection 
+
+$conn = mysqli_connect($host, $user,$pass, $databasename);
 
 // check if the connection was successful or not
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+
+if (!$conn){
+    die("connection failed: ". mysqli_connect_error());
 }
 
 // create a database
-$sql = "CREATE DATABASE mydb";
-if (mysqli_query($conn, $sql)) {
-    echo "Database created successfully";
-} else {
-    echo "Error creating database: " . mysqli_error($conn);
+$sql = "CREATE DATABASE sam";
+if (mysqli_query($conn, $swl)){
+    echo "Database created succecsfully";
+
+}else{
+    echo "Error creating database:"
+    mysqli_connect_error($conn);
 }
+
 
 // close the database connection
 mysqli_close($conn);
