@@ -1,3 +1,5 @@
+<!-- Create a form to accept student information (name , class , address) once the student information is accepted , accept marks in next form (phy, bio, chem , Math , Marathi, English) , display the marks sheet for the student in the next form containing name, class , marks of the subject total and percentage  -->
+
 <!DOCTYPE html>
 <html>
 <head>
