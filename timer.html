@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timer Example</title>
+  <style>
+    .timer {
+      font-size: 200px;
+      text-align: center;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer" id="timer">00:00:00</div>
+
+  <script>
+    // Timer logic
+    var seconds = 0;
+    var minutes = 0;
+    var hours = 0;
+    var timerElement = document.getElementById('timer');
+
+    function startTimer() {
+      setInterval(updateTimer, 1000);
+    }
+
+    function updateTimer() {
+      seconds++;
+
+      if (seconds == 60) {
+        seconds = 0;
+        minutes++;
+
+        if (minutes == 60) {
+          minutes = 0;
+          hours++;
+        }
+      }
+
+      timerElement.textContent = formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
+    }
+
+    function formatTime(time) {
+      return time < 10 ? '0' + time : time;
+    }
+
+    // Start the timer
+    startTimer();
+  </script>
+</body>
+</html>
